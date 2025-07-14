@@ -6,7 +6,10 @@ import { GenericEvents } from "@newrelic/browser-agent/features/generic_events";
 import { PageViewEvent } from "@newrelic/browser-agent/features/page_view_event";
 import { PageViewTiming } from "@newrelic/browser-agent/features/page_view_timing";
 import { SessionTrace } from "@newrelic/browser-agent/features/session_trace";
+import { Logging } from "@newrelic/browser-agent/features/logging";
+
 import { Spa } from "@newrelic/browser-agent/features/spa";
+
 export default defineNuxtPlugin(() => {
   const options = {
     init: {
@@ -55,6 +58,7 @@ export default defineNuxtPlugin(() => {
       GenericEvents,
       SessionTrace,
       Spa,
+      Logging
     ],
   });
 
