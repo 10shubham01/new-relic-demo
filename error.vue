@@ -5,10 +5,14 @@
 </template>
 <script lang="ts" setup>
 import type { NuxtError } from "#app";
-const props=defineProps<{
+const props = defineProps<{
   error: NuxtError;
 }>();
-useNuxtApp().$newRelic.api.noticeError(String(props.error.statusCode), {
-    path:useRoute().fullPath
+console.log("hello");
+
+useNuxtApp().$newRelic.api.addPageAction('log', {
+  level: 'info',
+  path: useRoute().fullPath,
+  message: props.error.message
 });
 </script>

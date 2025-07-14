@@ -43,7 +43,7 @@ export default defineNuxtPlugin(() => {
     },
   };
 
-  // Initialize the agent
+
   const agent = new BrowserAgent({
     ...options,
     features: [
@@ -58,13 +58,6 @@ export default defineNuxtPlugin(() => {
     ],
   });
 
-  // Add custom error handler for Nuxt route errors
-
-  const router = useRouter();
-  agent.api.addPageAction("Route404", {
-    route: router.currentRoute.value.path,
-    referrer: document.referrer,
-  });
   return {
     provide: {
       newRelic: agent
