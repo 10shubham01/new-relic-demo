@@ -15,4 +15,5 @@ useNuxtApp().$newRelic.api.addPageAction('log', {
   path: useRoute().fullPath,
   message: props.error.message
 });
+useNuxtApp().$newRelic.api.log('my log message', {customAttributes: {myFavoriteApp: true}})
 </script>
